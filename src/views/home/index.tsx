@@ -44,12 +44,17 @@ export const HomeView = () => {
         </h2>
       </Col>
 
-      <Col span={12}>
+      {/* <Col span={12}>
         <WalletMultiButton type="ghost" />
-      </Col>
+      </Col> */}
       <Col span={12}>
         <Link to="/faucet">
           <Button>Faucet</Button>
+        </Link>
+      </Col>
+      <Col span={12}>
+        <Link to="/nfts">
+          <Button>NFTS</Button>
         </Link>
       </Col>
       <Col span={24}>

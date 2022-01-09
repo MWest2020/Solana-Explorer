@@ -43,19 +43,22 @@ export interface ParsedAccount<T> extends ParsedAccountBase {
 }
 
 export const MintParser = (pubKey: PublicKey, info: AccountInfo<Buffer>) => {
-  const buffer = Buffer.from(info.data);
+  try {
+    const buffer = Buffer.from(info.data);
+    const data = deserializeMint(buffer);
 
-  const data = deserializeMint(buffer);
+    const details = {
+      pubkey: pubKey,
+      account: {
+        ...info,
+      },
+      info: data,
+    } as ParsedAccountBase;
 
-  const details = {
-    pubkey: pubKey,
-    account: {
-      ...info,
-    },
-    info: data,
-  } as ParsedAccountBase;
-
-  return details;
+    return details;
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 export const TokenAccountParser = (
@@ -396,7 +399,7 @@ export function AccountsProvider({ children = null as any }) {
         programIds().token,
         (info) => {
           // TODO: fix type in web3.js
-          const id = (info.accountId as unknown) as string;
+          const id = info.accountId as unknown as string;
           // TODO: do we need a better way to identify layout (maybe a enum identifing type?)
           if (info.accountInfo.data.length === AccountLayout.span) {
             const data = deserializeAccount(info.accountInfo.data);
