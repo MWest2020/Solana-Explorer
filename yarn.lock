@@ -1575,10 +1575,10 @@
   dependencies:
     buffer "~6.0.3"
 
-"@solana/spl-token-registry@^0.2.203":
-  version "0.2.1342"
-  resolved "https://registry.yarnpkg.com/@solana/spl-token-registry/-/spl-token-registry-0.2.1342.tgz#4bd02a0389f4340a7801016106c2ef28da9ddc57"
-  integrity sha512-tvoSuM+PMaxHZVbk+RDdjONosd/ahzX5sZhuO4o6sAKrDaKeMj7A4LnxxPnryrS903eFBsy8s1KfgHCDqjEYKA==
+"@solana/spl-token-registry@^0.2.3356":
+  version "0.2.3356"
+  resolved "https://registry.yarnpkg.com/@solana/spl-token-registry/-/spl-token-registry-0.2.3356.tgz#f3568228a1eeec3da09b63c23f6bc16f9cd7f160"
+  integrity sha512-D4H6oJ29+6tJ2x1KkRa96a8D0JPTdXEDuTHumibcVyQrnwjkkExKHtn+bxVTIU6YKJ8CBFlk7bOJ0uLoAMzLqQ==
   dependencies:
     cross-fetch "3.0.6"
 
